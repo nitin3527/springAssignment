@@ -15,8 +15,10 @@ public class SpringAssignmentApplication {
 		//BookTicketImpl ticket = new BookTicketImpl(new TrainTicket());
 		ApplicationContext applicationContext = SpringApplication.run(SpringAssignmentApplication.class, args);
 		BookTicketImpl ticket = applicationContext.getBean(BookTicketImpl.class);
+		System.out.println("=============================" + ticket.trip);
 		String res = ticket.bookTicket("delhi", "mumbai");
 		System.out.println(res);
 	}
 
 }
+

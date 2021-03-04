@@ -1,6 +1,7 @@
 package com.practice.springAssignment;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -8,7 +9,8 @@ public class BookTicketImpl {
 
     @Autowired
     TravelMedium travelMedium;
-
+    @Value("Have a safe flight")
+    String trip;
     // constructor injection
     BookTicketImpl(TravelMedium tm){
         this.travelMedium = tm;
@@ -17,6 +19,7 @@ public class BookTicketImpl {
         String tic = travelMedium.travelTicket(from, to);
         System.out.println(travelMedium);
         return tic;
+
         /*
         Tight coupling
         TrainTicket bookTicket = new TrainTicket();
@@ -25,3 +28,4 @@ public class BookTicketImpl {
          */
     }
 }
+
